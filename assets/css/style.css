@@ -2,6 +2,7 @@ html {
   font-size: 10px;
   background: url('../img/banner.jpeg') bottom center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 html,
@@ -17,6 +18,7 @@ body {
   min-height: 100vh;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .key {
