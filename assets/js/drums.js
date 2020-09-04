@@ -1,6 +1,8 @@
 function playSound(e) {
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  const key   = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+
+  const audio = document.querySelector(`audio[data-key="${e.keyCode || this.dataset.key}"]`);
+  const key   = document.querySelector(`.key[data-key="${e.keyCode || this.dataset.key}"]`);
+
 
   // Stop function from running
   if (!audio) return;
@@ -21,7 +23,10 @@ function removeTransition(e) {
 
 // Loop over each key and attach an eventListener
 const keys = document.querySelectorAll('.key');
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+keys.forEach(key => {
+  key.addEventListener('transitionend', removeTransition)
+  key.addEventListener('click', playSound)
+});
 
 // Play sound on key press
-window.addEventListener(['keydown'], playSound);
+window.addEventListener('keydown', playSound);
