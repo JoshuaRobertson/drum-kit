@@ -1,7 +1,15 @@
-@media (min-width: 960px) {
+@media (min-width: 576px) {
 
-  .keys {
-    flex-wrap: nowrap;
+  .key {
+    padding: 1rem .5rem;
+  }
+
+  .key kbd {
+    display: block;
+  }
+
+  .sound {
+    font-size: 1.2rem;
   }
 
 }
